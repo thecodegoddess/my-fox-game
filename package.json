@@ -4,13 +4,30 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "parcel src/index.html"
+    "test": "jest",
+    "dev": "parcel src/index.html",
+    "format": "prettier --ignore-path ./.git-ignore --write \"./**/*.{html, json, js, ts, css}\"",
+    "format:check": "prettier --ignore-path ./.git-ignore --check \"./**/*.{html,json,js,tx,css}\"",
+    "lint": "eslint --ignore-path ./.gitignore --fix \"./**/*.{js,ts}\"",
+    "lint:check": "eslint --ignore-path ./.gitignore --quiet \"./**/*.{js,ts}\"",
+    "clean:cache": "rm -rf .cache dist"
   },
-  "keywords": [],
+  "keywords": [
+    "exercise",
+    "front-end-masters",
+    "fox-game"
+  ],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "parcel-bundler": "^1.12.5"
-  }
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.23.4",
+    "jest": "^27.0.6",
+    "parcel-bundler": "^1.12.5",
+    "prettier": "^2.3.2"
+  },
+  "browserslist": [
+    "last 2 Firefox versions"
+  ]
 }

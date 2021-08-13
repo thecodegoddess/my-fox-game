@@ -1,0 +1,30 @@
+const GAME_STATE = {
+  INIT: 'INIT',
+  HATCHING: 'HATCHING',
+  IDLE: 'IDLE',
+  SLEEPING: 'SLEEPING',
+  EATING: 'EATING',
+  POOPING: 'POOPING',
+  HUNGRY: 'HUNGRY',
+  CELEBRATING: 'CELEBRATING',
+  DEAD: 'DEAD',
+};
+
+const ICON_NAMES = {
+  FISH: 'fish',
+  POOP: 'poop',
+  WEATHER: 'weather',
+};
+
+const ICONS = [ICON_NAMES.FISH, ICON_NAMES.POOP, ICON_NAMES.WEATHER];
+
+const TICK_RATE = 3000;
+
+const INTERACTIVE_CLASS_NAMES = {
+  HIGHLIGHTED: 'highlighted',
+  LEFT_BUTTON: 'left-btn',
+  RIGHT_BUTTON: 'right-btn',
+  BUTTONS: 'buttons',
+};
+
+export { GAME_STATE, ICONS, TICK_RATE, INTERACTIVE_CLASS_NAMES };

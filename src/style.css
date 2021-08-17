@@ -151,3 +151,33 @@ body {
   top: 380px;
   left: 243px;
 }
+
+.debugger {
+  border: 2px solid darkslategrey;
+  padding: 10px;
+  background: white;
+  color: #13134e;
+  position: sticky;
+  border-radius: 10px;
+  margin: 10px;
+  font-family: monospace;
+}
+
+.debugger__msg,
+.debugger__ticker {
+  border: 1px dashed darkslategray;
+  padding: 5px;
+  margin: 10px 5px;
+  border-radius: 5px;
+}
+
+.debugger__msg {
+  padding-left: 25px;
+  max-height: 20vh;
+  overflow-y: scroll;
+}
+
+.debugger__ticker span {
+  font-weight: bold;
+  color: red;
+}

@@ -1,22 +1,37 @@
-import { FOX_STATE_CLASSES, INTERACTIVE_CLASS_NAMES as CN } from './constants';
-
-export function modFox(state) {
-  const fox = document.querySelector(`.${CN.FOX}`);
-  fox.className = `${CN.FOX} ${FOX_STATE_CLASSES[state]}`;
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.writeModal = exports.togglePoopBag = exports.modScene = exports.modFox = void 0;
+var constants_1 = require("./constants");
+function modFox(state) {
+    var fox = document.querySelector("." + constants_1.INTERACTIVE_CLASS_NAMES.FOX);
+    if (!fox) {
+        return;
+    }
+    fox.className = constants_1.INTERACTIVE_CLASS_NAMES.FOX + " " + constants_1.FOX_STATE_CLASSES[state];
 }
-
-export function modScene(state) {
-  const game = document.querySelector(`.${CN.GAME}`);
-  game.className = `${CN.GAME} ${state}`;
+exports.modFox = modFox;
+function modScene(state) {
+    var game = document.querySelector("." + constants_1.INTERACTIVE_CLASS_NAMES.GAME);
+    if (!game) {
+        return;
+    }
+    game.className = constants_1.INTERACTIVE_CLASS_NAMES.GAME + " " + state;
 }
-
-export function togglePoopBag(show) {
-  const poopBag = document.querySelector(`.${CN.POOP_BAG}`);
-  poopBag.classList.toggle(CN.HIDDEN, !show);
+exports.modScene = modScene;
+function togglePoopBag(show) {
+    var poopBag = document.querySelector("." + constants_1.INTERACTIVE_CLASS_NAMES.POOP_BAG);
+    if (!poopBag) {
+        return;
+    }
+    poopBag.classList.toggle(constants_1.INTERACTIVE_CLASS_NAMES.HIDDEN, !show);
 }
-
-export function writeModal(text = '') {
-  document.querySelector(
-    '.modal',
-  ).innerHTML = `<div class="modal-inner">${text}</div>`;
+exports.togglePoopBag = togglePoopBag;
+function writeModal(text) {
+    if (text === void 0) { text = ''; }
+    var modalElement = document.querySelector('.modal');
+    if (!modalElement) {
+        return;
+    }
+    modalElement.innerHTML = "<div class=\"modal-inner\">" + text + "</div>";
 }
+exports.writeModal = writeModal;
